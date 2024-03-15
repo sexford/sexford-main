@@ -1,13 +1,13 @@
 {
   "site": {
-    "title": "Sexford-Circus",
-    "base_url": "https://sexford-circus.netlify.app/",
+    "title": "Sexford Street",
+    "base_url": "https://sexford-street.netlify.app/",
     "base_path": "/",
     "favicon": "/favicon.png",
     "logoLight": "/logoLight.png",
     "logoDark": "/logoDark.png",
     "lang": "jp",
-    "description": "Discover sexy videos at Sexford-Circus!",
+    "description": "Discover sexy videos at Sexford-Street!",
     "pageSize": 12
   },
   "features": {
@@ -15,12 +15,12 @@
     "dark_mode": true
   },
   "metadata": {
-    "meta_author": "Sexford-Circus",
-    "meta_description": "Discover sexy videos at Sexford-Circus!"
+    "meta_author": "Sexford Street",
+    "meta_description": "Discover sexy videos at Sexford Street!"
   },
   "author": {
-    "name": "Sexford-Circus",
+    "name": "Sexford Street",
     "avatar": "https://s3.amazonaws.com/gndx.dev/gndx-astro-avatar.png",
-    "bio": "Discover sexy videos at Sexford-Circus!"
+    "bio": "Discover sexy videos at Sexford Street!"
   }
 }

@@ -7,7 +7,7 @@ video: 'https://www.tokyomotion.net/embed/40a60787f19512372871'
 imageId: 'dbnkhly5w2riexs3mbhp'
 categories: ['本編無修正']
 tags: ['peeing','cosplay','outdoor','おしっこ','コスプレ','野外']
-author: '["Sexford_Circus"]'
+author: '["Sexford_Street"]'
 
 ---
 

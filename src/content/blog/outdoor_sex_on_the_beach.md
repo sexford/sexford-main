@@ -6,7 +6,7 @@ heroImage: '/blog-placeholder.jpg'
 video: 'https://www.tokyomotion.net/embed/ece44108b3d47ebe1ba1'
 categories: ['本編無修正']
 tags: ['outdoor']
-author: '["Sexford_Circus"]'
+author: '["Sexford_Street"]'
 ---
 
 Fucking beautiful girls on a white sand beach😻<br>
