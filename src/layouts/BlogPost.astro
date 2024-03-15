@@ -1,0 +1,73 @@
+---
+import Base from '@layouts/Base.astro';
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from '@components/FormattedDate.astro';
+import CalendarIcon from '@icons/CalendarIcon.astro';
+import CategoryIcon from '@icons/CategoryIcon.astro';
+import { Image } from 'astro:assets';
+import config from '@config/config.json';
+import { slugify } from '@utils/slug';
+import RightArrowIcon from '@components/icons/RightArrowIcon.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, video, imageId, categories, tags } = Astro.props;
+---
+
+<Base meta_title={title} description={description} imageId={imageId} blogpost>
+  <div class="lg:-ml-20 lg:flex">
+    <div class="mt-20 hidden lg:mr-8 lg:block lg:w-4/5">
+      <div class="flex justify-start"></div>
+    </div>
+    <article class="lg:mr-20 lg:w-4/5 lg:max-w-screen-md">
+      <h1 class="mb-8 text-2xl font-bold md:text-4xl">{title}</h1>
+      <div class="aspect-ratio-16/9 flex max-w-full justify-center overflow-hidden">
+        {
+          video && (
+            <iframe
+              width="800"
+              height="602"
+              src={video}
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          )
+        }
+      </div>
+
+      <div class="prose-md prose prose-green mt-8 min-w-full md:prose-lg">
+        <slot />
+      </div>
+      <div class="mt-8">
+        {
+          tags?.map((tag) => (
+            <a
+              href={`/tags/${slugify(tag)}`}
+              class="mb-2 mr-2 inline-block rounded-full bg-zinc-200 px-3 py-1 text-sm font-semibold capitalize text-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+            >
+              #{tag}
+            </a>
+          ))
+        }
+      </div>
+    </article>
+
+    <div class="mt-20 hidden lg:block lg:w-1/5">
+      <div class="flex lg:w-full" id="bannar_right">
+        <a href="https://click.dtiserv2.com/Click902/1103052-103-234542" target="_blank" rel="noopener" class="w-28"
+          ><img src="https://affiliate.dtiserv.com/image/dxlive/160_600_en.jpg" border="0" /></a
+        >
+      </div>
+    </div>
+  </div>
+
+  <div class="m-auto mt-12 text-right">
+    <a
+      class="inline-block rounded border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 transition-all hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500 dark:border-indigo-400 dark:text-indigo-400 dark:hover:border-indigo-600 dark:hover:text-white"
+      href="/blog"
+    >
+      View All Posts
+      <RightArrowIcon />
+    </a>
+  </div>
+</Base>

@@ -1,0 +1,135 @@
+---
+import Header from '@components/Header.astro';
+import Hero from '@components/Hero.astro';
+import FeaturedVideos from '@components/FeaturedVideos.astro';
+import Footer from '@components/Footer.astro';
+import config from '@config/config.json';
+import { createOgImage } from '@utils/createOgImage';
+
+import '@styles/global.css';
+
+import { ViewTransitions } from 'astro:transitions';
+
+export interface Props {
+  title?: string;
+  meta_title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  canonical?: string;
+  blogpost?: boolean;
+  imageId?: string; // Cloudinary用にこの行を追加 マークダウンファイルの変数を管理しているのはconfig.tsだ
+}
+
+const { title, meta_title, description, imageId, noindex, blogpost } = Astro.props;
+
+const ogImage = createOgImage({
+  title: meta_title ? meta_title : title ? title : config.site.title,
+  meta: [config.site.title, config.site.base_url].join(' · '),
+  CloudinaryId: imageId ? imageId : '', // Cloudinary用にこの行を追加
+});
+---
+
+<!doctype html>
+<html lang={config.site.lang}>
+  <head>
+    <!-- Adsterra Network -->
+
+    <meta name="7searchppc" content="VoiAQsTZRDfLYI5R2XEm1FtP24" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M76X6TLHW4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-M76X6TLHW4');
+    </script>
+    <!-- favicon -->
+    <link rel="shortcut icon" href={config.site.favicon} />
+    <!-- theme meta -->
+    <meta name="theme-name" content="bookworm-light-astro" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta name="generator" content={Astro.generator} />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+
+    <title>{meta_title ? meta_title : title ? title : config.site.title}</title>
+    <meta name="title" content={meta_title ? meta_title : title ? title : config.site.title} />
+    <link rel="canonical" href={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} item-prop="url" />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <meta name="description" content={description ? description : config.metadata.meta_description} />
+    <!-- author from config.json -->
+    <meta name="author" content={config.metadata.meta_author} />
+    <!-- og-title -->
+    <meta property="og:title" content={meta_title ? meta_title : title ? title : config.site.title} />
+    <!-- og-description -->
+    <meta property="og:description" content={description ? description : config.metadata.meta_description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} />
+
+    <!-- twitter-title -->
+    <meta name="twitter:title" content={meta_title ? meta_title : title ? title : config.site.title} />
+    <!-- twitter-description -->
+    <meta name="twitter:description" content={description ? description : config.metadata.meta_description} />
+    <!-- og-image -->
+    <meta property="og:image" content={ogImage} />
+    <!-- twitter-image -->
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script is:inline src="/registerSW.js"></script>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <ViewTransitions />
+  </head>
+
+  <body class="bg-white dark:bg-zinc-900/95">
+    <Header />
+    <!-- {!blogpost && <Hero />} -->
+    <main class="mx-auto max-w-screen-lg px-2">
+      <div class="mx-auto mb-4 mt-4 flex hidden justify-center md:block lg:mt-8">
+        <a
+          href="https://click.dtiserv2.com/Click902/1103053-103-234542"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center"><img src="https://affiliate.dtiserv.com/image/dxlive/728_90_en.jpg" /></a
+        >
+        <script type="text/javascript"></script>
+      </div>
+      <div class="mb-4 mt-4 block md:hidden">
+        <!-- スマホ用広告バナーのコード -->
+        <div class="flex justify-center">
+          <iframe
+            src="https://mmaaxx.com/table/dx/9103068/index.html?affid=234542"
+            width="300"
+            height="100"
+            frameborder="no"
+            scrolling="no"></iframe>
+        </div>
+      </div>
+      <slot />
+      <div class="mx-auto mt-8 flex justify-center" id="bottom_bannar">
+        <a href="https://click.dtiserv2.com/Click902/1103053-103-234542" target="_blank" rel="noopener"
+          ><img src="https://affiliate.dtiserv.com/image/dxlive/728_90_en.jpg" /></a
+        >
+        <script type="text/javascript"></script>
+      </div>
+    </main>
+    <!-- {!blogpost && config.features.youtube && <FeaturedVideos />} -->
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <script>
+      // This is a hack to get vite-plugin-pwa to generate a sw.js file.
+      // Do not remove this script tag.
+    </script>
+
+    <Footer />
+  </body>
+</html>
