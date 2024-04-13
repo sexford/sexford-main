@@ -27,7 +27,7 @@ const { title, meta_title, description, imageId, OgImagePath, noindex, blogpost 
 const ogImage = createOgImage({
   title: meta_title ? meta_title : title ? title : config.site.title,
   meta: [config.site.title, config.site.base_url].join(' · '),
-  imagePath: OgImagePath ? OgImagePath : 'massage1.png',
+  imagePath: imageId ? imageId : 'massage1.png',
 });
 ---
 
