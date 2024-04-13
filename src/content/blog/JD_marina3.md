@@ -4,6 +4,7 @@ description: 'Multiple, repeated pistons. Filmed at close range from behind, so 
 pubDate: '2024-03-06T13:59:44.275Z'
 heroImage: '/blog-placeholder.jpg'
 imageId: 'dp6gwawgqiws5jnx7e86'
+OgImagePath: '0006.png'
 video: 'https://www.tokyomotion.net/embed/ce85fd371448ffff3bbe'
 categories: ['本編無修正']
 tags: ['marina','sox','unshaven','マリナ','靴下']
