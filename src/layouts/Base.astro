@@ -27,8 +27,7 @@ const { title, meta_title, description, imageId, OgImagePath, noindex, blogpost 
 const ogImage = createOgImage({
   title: meta_title ? meta_title : title ? title : config.site.title,
   meta: [config.site.title, config.site.base_url].join(' · '),
-  CloudinaryId: imageId ? imageId : '',
-  imagePath: OgImagePath ? OgImagePath : 'massage1.png',
+  imagePath: OgImagePath ? OgImagePath : '',
 });
 ---
 
@@ -79,11 +78,11 @@ const ogImage = createOgImage({
     <!-- twitter-description -->
     <meta name="twitter:description" content={description ? description : config.metadata.meta_description} />
     <!-- og-image -->
-    <!-- <meta property="og:image" content={ogImage} /> -->
-    <meta property="og:image" content={`${config.site.base_url}${OgImagePath}.png`} />
+    <meta property="og:image" content={ogImage} />
+    <!-- <meta property="og:image" content={`${config.site.base_url}${OgImagePath}`} /> -->
     <!-- twitter-image -->
-    <!-- <meta name="twitter:image" content={ogImage} /> -->
-    <meta property="og:image" content={`${config.site.base_url}${OgImagePath}.png`} />
+    <meta name="twitter:image" content={ogImage} />
+    <!-- <meta name="twitter:image" content={`${config.site.base_url}${OgImagePath}`} /> -->
     <meta name="twitter:card" content="summary_large_image" />
 
     <script is:inline src="/registerSW.js"></script>

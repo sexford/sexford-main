@@ -1,4 +1,4 @@
-export const createOgImage = ({ title, meta, CloudinaryId, imagePath }: { title: string; meta: string; CloudinaryId: string; imagePath: string; }) =>
+export const createOgImage = ({ title, meta, imagePath }: { title: string; meta: string; imagePath: string; }) =>
   [
     // ACCOUNT PREFIX
     // Add your own Cloudinary account ID.
