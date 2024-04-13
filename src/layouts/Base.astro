@@ -70,7 +70,7 @@ const ogImage = createOgImage({
     <!-- og-description -->
     <meta property="og:description" content={description ? description : config.metadata.meta_description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={`${config.site.base_url}/${Astro.url.pathname.replace('/', '')}`} />
+    <meta property="og:url" content={`${config.site.base_url}${Astro.url.pathname.replace('/', '')}`} />
 
     <!-- twitter-title -->
     <meta name="twitter:title" content={meta_title ? meta_title : title ? title : config.site.title} />
