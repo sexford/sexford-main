@@ -12,6 +12,7 @@ const blog = defineCollection({
     authors: z.array(z.string()).default(['Sexford_Street']),
     video: z.string().optional(),
     imageId: z.string().optional(),
+    image: z.string().optional(),
     // twitter_title: z.string(),
   }),
 });
