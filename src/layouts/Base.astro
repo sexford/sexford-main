@@ -14,20 +14,21 @@ export interface Props {
   title?: string;
   meta_title?: string;
   description?: string;
-  image?: string;
+  // image?: string;
   noindex?: boolean;
   canonical?: string;
   blogpost?: boolean;
   imageId?: string; // Cloudinary用にこの行を追加 マークダウンファイルの変数を管理しているのはconfig.tsだ
+  OgImagePath?: string;
 }
 
-const { title, meta_title, description, imageId, image, noindex, blogpost } = Astro.props;
+const { title, meta_title, description, imageId, OgImagePath, noindex, blogpost } = Astro.props;
 
 const ogImage = createOgImage({
   title: meta_title ? meta_title : title ? title : config.site.title,
   meta: [config.site.title, config.site.base_url].join(' · '),
   CloudinaryId: imageId ? imageId : '', // Cloudinary用にこの行を追加
-  imagePath: image ? image : 'massage1.png',
+  imagePath: OgImagePath ? OgImagePath : 'massage1.png',
 });
 ---
 
