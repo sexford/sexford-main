@@ -1,10 +1,11 @@
-export const createOgImage = ({ title, meta, CloudinaryId }: { title: string; meta: string; CloudinaryId: string; }) =>
+export const createOgImage = ({ title, meta, CloudinaryId, imagePath }: { title: string; meta: string; CloudinaryId: string; imagePath: string; }) =>
   [
     // ACCOUNT PREFIX
     // Add your own Cloudinary account ID.
-    `https://res.cloudinary.com/dtbsoct7x/image/upload`,
+    // `https://res.cloudinary.com/dtbsoct7x/image/upload`,
+    `https://sexford-street.netlify.app/`,
     // Composed Image Transformations
-    `w_1600,h_836,q_100`,
+    // `w_1600,h_836,q_100`,
     // TITLE
     // Karla google font in light rose
     // `l_text:Ubuntu_92_bold:${e(title)},co_rgb:ffe4e6,c_fit,w_1200,h_400`,
@@ -16,7 +17,8 @@ export const createOgImage = ({ title, meta, CloudinaryId }: { title: string; me
     // Positioning
     // `fl_layer_apply,g_south_west,x_100,y_100`,
     // IMAGE <YOUR Cloudinary IMAGE ID>
-    CloudinaryId,
+    // CloudinaryId,
+    imagePath,
   ].join('/');
 
 // double escape for commas and slashes

@@ -27,6 +27,7 @@ const ogImage = createOgImage({
   title: meta_title ? meta_title : title ? title : config.site.title,
   meta: [config.site.title, config.site.base_url].join(' · '),
   CloudinaryId: imageId ? imageId : '', // Cloudinary用にこの行を追加
+  imagePath: image ? image : '',
 });
 ---
 
@@ -80,7 +81,7 @@ const ogImage = createOgImage({
     <meta property="og:image" content={ogImage} />
     <!-- <meta property="og:image" content={image ? `${config.site.base_url}${image}` : ''} /> -->
     <!-- twitter-image -->
-    <meta name="twitter:image" content={image ? `${config.site.base_url}${image}` : ''} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:card" content="summary_large_image" />
 
     <script is:inline src="/registerSW.js"></script>
