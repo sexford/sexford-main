@@ -3,7 +3,7 @@ export const createOgImage = ({ title, meta, CloudinaryId, imagePath }: { title:
     // ACCOUNT PREFIX
     // Add your own Cloudinary account ID.
     // `https://res.cloudinary.com/dtbsoct7x/image/upload`,
-    `https://sexford-street.netlify.app/`,
+    `https://sexford-street.netlify.app`,
     // Composed Image Transformations
     // `w_1600,h_836,q_100`,
     // TITLE
