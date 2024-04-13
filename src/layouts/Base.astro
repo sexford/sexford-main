@@ -80,10 +80,16 @@ const ogImage = createOgImage({
     <meta name="twitter:description" content={description ? description : config.metadata.meta_description} />
     <!-- og-image -->
     <!-- <meta property="og:image" content={ogImage} /> -->
-    <meta property="og:image" content={OgImagePath ? OgImagePath : `${config.site.base_url}massage1.png`} />
+    <meta
+      property="og:image"
+      content={OgImagePath ? `${config.site.base_url}${OgImagePath}` : `${config.site.base_url}massage1.png`}
+    />
     <!-- twitter-image -->
     <!-- <meta name="twitter:image" content={ogImage} /> -->
-    <meta name="twitter:image" content={OgImagePath ? OgImagePath : `${config.site.base_url}massage1.png`} />
+    <meta
+      name="twitter:image"
+      content={OgImagePath ? `${config.site.base_url}${OgImagePath}` : `${config.site.base_url}massage1.png`}
+    />
     <meta name="twitter:card" content="summary_large_image" />
 
     <script is:inline src="/registerSW.js"></script>
