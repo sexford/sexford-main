@@ -82,13 +82,13 @@ const ogImage = createOgImage({
     <!-- <meta property="og:image" content={ogImage} /> -->
     <meta
       property="og:image"
-      content={OgImagePath ? `${config.site.base_url}${OgImagePath}` : `${config.site.base_url}massage1.png`}
+      content={OgImagePath ? `${config.site.base_url}${OgImagePath}.png` : `${config.site.base_url}massage1.png`}
     />
     <!-- twitter-image -->
     <!-- <meta name="twitter:image" content={ogImage} /> -->
     <meta
-      name="twitter:image"
-      content={OgImagePath ? `${config.site.base_url}${OgImagePath}` : `${config.site.base_url}massage1.png`}
+      property="og:image"
+      content={OgImagePath ? `${config.site.base_url}${OgImagePath}.png` : `${config.site.base_url}massage1.png`}
     />
     <meta name="twitter:card" content="summary_large_image" />
 
