@@ -20,14 +20,14 @@ export interface Props {
   blogpost?: boolean;
   imageId?: string; // Cloudinary用にこの行を追加 マークダウンファイルの変数を管理しているのはconfig.tsだ
   OgImagePath?: string;
-} // posts.astroとconfig.tsも編集すること。
+} // posts.astroとblogPost.astroとconfig.tsも編集すること。
 
 const { title, meta_title, description, imageId, OgImagePath, noindex, blogpost } = Astro.props;
 
 const ogImage = createOgImage({
   title: meta_title ? meta_title : title ? title : config.site.title,
   meta: [config.site.title, config.site.base_url].join(' · '),
-  imagePath: imageId ? imageId : 'massage1.png',
+  imagePath: OgImagePath ? OgImagePath : 'massage1.png',
 });
 ---
 

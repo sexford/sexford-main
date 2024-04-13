@@ -11,10 +11,10 @@ import RightArrowIcon from '@components/icons/RightArrowIcon.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, video, imageId, categories, tags } = Astro.props;
+const { title, description, pubDate, video, imageId, OgImagePath, categories, tags } = Astro.props;
 ---
 
-<Base meta_title={title} description={description} imageId={imageId} blogpost>
+<Base meta_title={title} description={description} imageId={imageId} OgImagePath={OgImagePath} blogpost>
   <div class="lg:-ml-20 lg:flex">
     <div class="mt-20 hidden lg:mr-8 lg:block lg:w-4/5">
       <div class="flex justify-start"></div>
